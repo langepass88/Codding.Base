@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    let dollar = 32;
+    let euro = 56;
+
+    alert("Приветствуем Вас в программе конвертера валют!");
+    let rubl = +prompt("Сколько рублей вы хотите сконвертировать в доллары или евро?");
+    while ((isNaN(rubl)) || (rubl <= 0) || (rubl % 1 !== 0)) {
+        alert("Необхожимо ввести целое положительное число");
+        rubl = +prompt("Сколько рублей вы хотите сконвертировать в доллары или евро?");
+
+    }
+
+    let RublToEur = rubl / euro;
+    let RublToDoll = rubl / dollar;
+
+    alert('Итак, вот что получилось:\n' + rubl + ' рублей = ' + RublToEur.toFixed(2) + ' евро. \n' + rubl + ' рублей = ' + RublToDoll.toFixed(2) + ' долларов');
+
+</script>
