@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Личный сайт студента GeekBrains</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        var letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+        function readInt() {
+            return +document.getElementById("userAnswer").value;
+        }
+
+        function getRandomNumber(max) {
+            return Math.round(Math.random() * max);
+        }
+
+
+        function generateText(letters, lenght) {
+            var text = "";
+            for (var i = 0; i < lenght; i++) {
+                var n = getRandomNumber(letters.length - 1);
+                text = text + letters[n];
+            }
+            return text;
+        }
+
+        function write(text) {
+            document.getElementById("passw").innerHTML = text;
+        }
+
+        function generate() {
+            var lenght = readInt();
+            var passw = generateText(letters, lenght);
+            write(passw);
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div class="content">
+    <div class="header">
+        <a href="index.html">Главная</a><span>/</span>
+        <a href="puzzle.html">Загадки</a><span>/</span>
+        <a href="guess.html">Угадайка</a><span>/</span>
+        <a href="guess2.html">Угадайка мультиплеер</a><span>/</span>
+        <a href="pass.html">Генератор паролей<sup>&nbsp;new!</sup></a>
+    </div>
+
+    <div class="contentWrap">
+        <div class="content">
+            <div class="center">
+
+                <h1>Генератор случайных паролей</h1>
+
+                <div class="box">
+
+                    <p>Укажите длину пароля</p>
+                    <input type="text" id="userAnswer"><label for="userAnswer"></label>
+                    <h3 id="passw"></h3>
+                    <a href="#" onClick="generate();">Генерировать</a>
+                    <a href="pass.html" class="q1">Очистить</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="footer">
+    Copyright &copy; Vasily Pupkin
+</div>
+
+
+</body>
+
+</html>
