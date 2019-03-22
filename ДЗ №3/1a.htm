@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    function arr(a) {
+        var numbers = [];
+        for (var i = 0; i < a; i++) {
+            numbers.push(i);
+        }
+        document.write(numbers);
+    }
+
+    var n = prompt("Сколько чисел вы хотите вывести, начиная с 1?");
+    while (isNaN(n) || n < 0 || n % 1 !== 0) {
+        alert("Необходимо ввести целое положительное число");
+        n = prompt("Сколько чисел вы хотите вывести, начиная с 1?");
+    }
+    arr(n);
+
+</script>

@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    alert("Сыграем в загадки!");
+
+    function askQuestion(question, answers) {
+        var userAnswer = prompt(question);
+        userAnswer = userAnswer.toLowerCase();
+
+        for (var i = 0; i < answers.length; i++) {
+            if (userAnswer === answers[i]) {
+                alert("Точно! Ты угадал");
+                score++;
+                return;
+            }
+        }
+        alert("Ты не угадал");
+    }
+
+    var score = 0;
+    askQuestion("Зимой и летом одним цветом?", ["елка", "ёлка", "ель"]);
+    askQuestion("Висит груша нельзя скушать?", ["лампочка", "лампа", "ламп"]);
+    askQuestion("Сидит дед, во сто шуб одет?", ["лук", "лучок", "луковица"]);
+
+    alert("Количество правильно угаданных загадок: " + score);
+
+</script>
