@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    alert("Добро пожаловать в калькулятор вклада.Вам необходимо ввести сумму вклада и желаемый процент. Обратите внимание, что сумма и процент должны быть введены в положительных числах. В противном случае, программа попросит вас ввести данные снова.");
+
+
+    do {
+        var sumVklad = +prompt("Введите сумму вклада в рублях. Если у вас не целое число, то введите количество копеек через точку: ");
+    } while (isNaN(sumVklad) || sumVklad <= 0);
+
+    sumVklad = parseFloat(sumVklad);
+    let dohod = sumVklad;
+
+    do {
+        var procent = prompt("Введите процентную ставку. Если у вас не целое число, то введите десятичные проценты через точку: ");
+    } while (isNaN(procent) || procent <= 0);
+
+    procent = parseFloat(procent);
+
+    document.write("Сумма вашего вклада составляет: " + sumVklad + " рублей.<br>");
+    document.write("Ваша процентная ставка составляет: " + procent + " процентов.<br><hr>");
+
+    procent = procent / 100;
+    let god = 5;
+    for (let i = 1; i <= god; i++) {
+        sumVklad = sumVklad + (sumVklad * procent);
+        document.write("Сумма вашего вклада в конце " + i + "го года составит: " + sumVklad.toFixed(2) + " рублей.<br>");
+    }
+
+    document.write("<hr>Ваш общий доход составит: <b>" + (sumVklad - dohod).toFixed(2) + " рублей.</b><br>");
+
+</script>
